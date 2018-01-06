@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../kendo/styles/kendo.common-bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.dataviz.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.dataviz.bootstrap.min.css" media="screen">
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../kendo/js/kendo.all.min.js"></script>
+	<script type="text/javascript" src="../js/knockout-3.4.2.js"></script>	
+	<script type="text/javascript" src="../js/knockout-kendo.min.js"></script>
+	<script type="text/javascript" src="../kendo/js/kendo.validator.min.js"></script>
+    <script type="text/javascript" src="../kendo/js/kendo.web.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/scripts.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9NuvfZ7r4WMuS9UMjK_fJluCbN1_elRk&signed_in=true" async defer></script>
+	<script type="text/javascript" src="../js/geolocation.js"></script>
+	
+	<style type="text/css">
+		
+		#map{
+			width: 100%;
+			height: 250px;
+		}
+	</style>
+</head>
+<body>	
+	<nav class="navbar navbar-inverse navbar-fixed">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="../index.html" class="navbar-brand">Proyecto Final Knockout JS</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="compras.html"><span class="glyphicon glyphicon-shopping-cart"></span> Compras</a></li>
+				<li><a href="lista-productos.html"><span class="glyphicon glyphicon-blackboard"></span> Nuestros Productos</a></li>
+				<li class="active"><a href="contactenos.html"><span class="glyphicon glyphicon-user"></span> Contactenos</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<div class="jumbotron">				
+				<div id="map"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>Contactenos</h3>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="control-label col-md-2" for="nombreC">Nombre</label>
+							<div class="col-md-10">
+								<input type="text" data-bind="kendoMaskedTextBox: nombreC" id="nombreC" required validationMessage="Enter {0}" placeholder="Nombres y Apellidos">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="email">Email</label>
+							<div class="col-md-10">
+								<input type="text" data-bind="kendoMaskedTextBox: correo" id="email"  placeholder="example@domain.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="telefono">Telefono</label>
+							<div class="col-md-10">
+								<input type="text" data-bind="kendoMaskedTextBox: telefono" id="telefono" placeholder="(+57)">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="nombreC">Fecha</label>
+							<div class="col-md-10">
+								<input type="text" data-bind="kendoDatePicker: fecha" id="nombre" placeholder="Nombres y Apellidos">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="comentario">Comentario</label>
+							<div class="col-md-10">
+								<textarea class="form-control" id="comentario" rows="5" data-bind="kendoMaskedTextBox: comentario" placeholder="Ingrese su comentario o sugerencia"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-1 col-md-offset-2">
+								<button data-bind="click:agregarContacto" class="btn btn-primary">Enviar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

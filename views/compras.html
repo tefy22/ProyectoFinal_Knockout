@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../kendo/styles/kendo.common-bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.dataviz.min.css" media="screen">
+    <link rel="stylesheet" href="../kendo/styles/kendo.dataviz.bootstrap.min.css" media="screen">
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../kendo/js/kendo.all.min.js"></script>
+	<script type="text/javascript" src="../js/knockout-3.4.2.js"></script>
+	
+	<script type="text/javascript" src="../js/knockout-kendo.min.js"></script>
+	<script type="text/javascript" src="../kendo/js/kendo.validator.min.js"></script>
+    <script type="text/javascript" src="../kendo/js/kendo.web.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/scripts.js"></script>
+	<style type="text/css">
+		table{
+			width: 0 auto;
+		}
+	</style>
+</head>
+<body>	
+	<nav class="navbar navbar-inverse navbar-fixed">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="../index.html" class="navbar-brand">Proyecto Final Knockout JS</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="compras.html"><span class="glyphicon glyphicon-shopping-cart"></span> Compras</a></li>
+				<li><a href="lista-productos.html"><span class="glyphicon glyphicon-blackboard"></span> Nuestros Productos</a></li>
+				<li><a href="contactenos.html"><span class="glyphicon glyphicon-user"></span> Contactenos</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>Orden de Compra</h3>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="control-label col-md-2" for="producto">Producto</label>
+							<div class="col-md-10">
+								<input id="producto" data-bind="kendoComboBox: {change: agregarPrecio, data: nProducto, value: selectProducto}">
+								<!--<select class="form-control" data-bind="foreach: productos" id="producto">
+									<option data-bind="text: $data.nombre"></option>
+								</select>-->
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="precio">Precio</label>
+							<div class="col-md-3">
+								<input type="text" id="precio" data-bind="kendoMaskedTextBox: precio" readonly placeholder="$">
+							</div>
+							<label class="control-label col-md-1" for="cantidad">Cantidad</label>
+							<div class="col-md-3">
+								<input type="text" id="cantidad" class="form-control" data-bind="kendoNumericTextBox: canti">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="iden">Identificación</label>
+							<div class="col-md-3">
+								<input type="text" id="iden" class="form-control">
+							</div>
+							<label class="control-label col-md-1" for="nombre">Cliente</label>
+							<div class="col-md-6">
+								<input type="text" id="nombre" class="form-control" placeholder="Nombre Completo">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-1 col-md-offset-2">
+								<button data-bind="click:agregarProducto" class="btn btn-success">Registrar</button>
+							</div>
+							<div class="col-md-2 col-md-offset-1">
+								<button class="btn btn-danger" type="reset">Cancelar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>Listado de Compras</h3>
+				</div>
+				<table class="table table-hover" id="mytable">
+					<thead class="text-primary">
+						<tr>
+							<th>Identificación</th>
+							<th>Cliente</th>
+							<th>Nombre del Producto</th>
+							<th>Precio</th>
+							<th>Cantidad</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: compras">
+						<tr>
+							<td data-bind="text: $data.iden"></td>
+							<td data-bind="text: $data.cliente"></td>
+							<td data-bind="text: $data.nombreP"></td>
+							<td data-bind="text: $data.precio"></td>
+							<td data-bind="text: $data.cant"></td>
+							<td data-bind="text: $data.total"></td>
+							<td><a href="#" data-bind="click: $parent.quitarProducto"><span class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+				<button class="btn btn-warning" data-bind="click: imprimir">Imprimir</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

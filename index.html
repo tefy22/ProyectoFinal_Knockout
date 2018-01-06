@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed" id="navegacion">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Bienvenido--> Proyecto Final Knockout JS</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="views/compras.html"><span class="glyphicon glyphicon-shopping-cart"></span> Compras</a></li>
+				<li><a href="views/lista-productos.html"><span class="glyphicon glyphicon-blackboard"></span> Nuestros Productos</a></li>
+				<li><a href="views/contactenos.html"><span class="glyphicon glyphicon-user"></span> Contactenos</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="carousel slide" data-ride="carousel" id="miSlider">
+		<ol class="carousel-indicators">
+			<li data-target="#miSlider" data-slide-to="0" class="active"></li>
+			<li data-target="#miSlider" data-slide-to="1"></li>
+			<li data-target="#miSlider" data-slide-to="2"></li>
+			<li data-target="#miSlider" data-slide-to="3"></li>
+			<li data-target="#miSlider" data-slide-to="4"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/f1.png" alt="Imagen 1">
+				<div class="carousel-caption">
+					<h2>Tienda Virtual</h2>
+	            	<p>Solución al Instante</p>
+          		</div>
+        	</div>
+        	<div class="item">
+        		<img src="img/fp.png" alt="Imagen 2">
+        		<div class="carousel-caption">
+					<h2 style="color: blue">Tienda Virtual</h2>
+	            	<p style="color: blue">Solución al Instante</p>
+          		</div>
+        	</div>
+        	<div class="item">
+        		<img src="img/f2.png" alt="Imagen 3">
+        		<div class="carousel-caption">
+					<h2 style="color: purple">Tienda Virtual</h2>
+	            	<p style="color: purple">Mejores Marcas del Mercado</p>
+          		</div>
+        	</div>
+        	<div class="item">
+        		<img src="img/f3.png" alt="Imagen 4">
+        	</div>
+        	<div class="item">
+        		<img src="img/f4.png" alt="Imagen 5">
+        	</div>
+		</div>
+		<a href="#miSlider" class="carousel-control left" data-slide="prev">
+        	<span class="glyphicon glyphicon-chevron-left"></span>
+      	</a>
+      	<a href="#miSlider" class="carousel-control right" data-slide="next">
+        	<span class="glyphicon glyphicon-chevron-right"></span>
+      	</a>
+	</div>
+	<footer class="footer">
+      Stefania Afanador Ortega | 2018
+    </footer>
+<script>
+    $('.carousel').carousel({
+     	interval: 2000,
+        pause: "hover"
+    });
+   </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+img{
+	margin: auto;
+	width: 50%;
+	height: 100%;
+}
+#navegacion{
+	margin-bottom: 0px;
+}
+.item{
+	height: 500px;
+	margin-top: 10px;
+}
+.footer {
+  text-align: center;
+  background: #222;
+  color: #ccc;
+  padding: 15px;
+  margin-top: 0px;
+}
